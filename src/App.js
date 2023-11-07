@@ -1,10 +1,18 @@
-import logo from "./logo.svg";
 import "./App.css";
+import React from "react";
+import ComponentC from "./components/ComponentC";
+
+export const UserContext = React.createContext();
+export const ChannelContext = React.createContext();
 
 function App() {
 	return (
 		<div className="App">
-			<p>Hello</p>
+			<UserContext.Provider value="MG">
+				<ChannelContext.Provider value="Codevolution">
+					<ComponentC />
+				</ChannelContext.Provider>
+			</UserContext.Provider>
 		</div>
 	);
 }
